@@ -36,5 +36,5 @@
 
 Name = Chosen One
 Include = EVERYTHING
-Exclude = BAN SERVER PERMISSIONS
+Exclude = BAN SERVER
 Edit =

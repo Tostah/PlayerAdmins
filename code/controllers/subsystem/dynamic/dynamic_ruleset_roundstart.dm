@@ -31,26 +31,12 @@
 		return FALSE
 	return TRUE
 
-//There is only one roundstart ruleset that matters. MWAHAHAHAHA
-//technically other roundstarts can still happen...
-
-/datum/dynamic_ruleset/roundstart/chosenone
-	name = "The Chosen One"
-	config_tag = "The Chosen One"
-	preview_antag_datum = /datum/antagonist/chosenone
-	weight = 100
-	min_pop = 1
-	max_antag_cap = 1
-
-/datum/dynamic_ruleset/roundstart/traitor/assign_role(datum/mind/candidate)
-	candidate.add_antag_datum(/datum/antagonist/chosenone)
-
 /datum/dynamic_ruleset/roundstart/traitor
 	name = "Traitors"
 	config_tag = "Roundstart Traitor"
 	preview_antag_datum = /datum/antagonist/traitor
 	pref_flag = ROLE_TRAITOR
-	weight = 0
+	weight = 10
 	min_pop = 3
 	max_antag_cap = list("denominator" = 24)
 
@@ -65,9 +51,9 @@
 	ruleset_flags = RULESET_HIGH_IMPACT
 	weight = list(
 		DYNAMIC_TIER_LOW = 0,
-		DYNAMIC_TIER_LOWMEDIUM = 0,
-		DYNAMIC_TIER_MEDIUMHIGH = 0,
-		DYNAMIC_TIER_HIGH = 0,
+		DYNAMIC_TIER_LOWMEDIUM = 1,
+		DYNAMIC_TIER_MEDIUMHIGH = 3,
+		DYNAMIC_TIER_HIGH = 3,
 	)
 	min_pop = 30
 	max_antag_cap = 1
@@ -93,7 +79,7 @@
 	config_tag = "Roundstart Blood Brothers"
 	preview_antag_datum = /datum/antagonist/brother
 	pref_flag = ROLE_BROTHER
-	weight = 0
+	weight = 5
 	max_antag_cap = list("denominator" = 29)
 	min_pop = 10
 
@@ -105,7 +91,7 @@
 	config_tag = "Roundstart Changeling"
 	preview_antag_datum = /datum/antagonist/changeling
 	pref_flag = ROLE_CHANGELING
-	weight = 0
+	weight = 3
 	min_pop = 15
 	max_antag_cap = list("denominator" = 29)
 
@@ -117,7 +103,7 @@
 	config_tag = "Roundstart Heretics"
 	preview_antag_datum = /datum/antagonist/heretic
 	pref_flag = ROLE_HERETIC
-	weight = 0
+	weight = 3
 	max_antag_cap = list("denominator" = 24)
 	min_pop = 30 // Ensures good spread of sacrifice targets
 
@@ -133,8 +119,8 @@
 	weight = list(
 		DYNAMIC_TIER_LOW = 0,
 		DYNAMIC_TIER_LOWMEDIUM = 0,
-		DYNAMIC_TIER_MEDIUMHIGH = 0,
-		DYNAMIC_TIER_HIGH = 0,
+		DYNAMIC_TIER_MEDIUMHIGH = 1,
+		DYNAMIC_TIER_HIGH = 2,
 	)
 	max_antag_cap = 1
 	min_pop = 30
@@ -163,9 +149,9 @@
 	ruleset_flags = RULESET_HIGH_IMPACT
 	weight = list(
 		DYNAMIC_TIER_LOW = 0,
-		DYNAMIC_TIER_LOWMEDIUM = 0,
-		DYNAMIC_TIER_MEDIUMHIGH = 0,
-		DYNAMIC_TIER_HIGH = 0,
+		DYNAMIC_TIER_LOWMEDIUM = 1,
+		DYNAMIC_TIER_MEDIUMHIGH = 3,
+		DYNAMIC_TIER_HIGH = 3,
 	)
 	min_pop = 30
 	blacklisted_roles = list(
@@ -224,9 +210,9 @@
 	ruleset_flags = RULESET_INVADER|RULESET_HIGH_IMPACT
 	weight = list(
 		DYNAMIC_TIER_LOW = 0,
-		DYNAMIC_TIER_LOWMEDIUM = 0,
-		DYNAMIC_TIER_MEDIUMHIGH = 0,
-		DYNAMIC_TIER_HIGH = 0,
+		DYNAMIC_TIER_LOWMEDIUM = 1,
+		DYNAMIC_TIER_MEDIUMHIGH = 3,
+		DYNAMIC_TIER_HIGH = 3,
 	)
 	min_pop = 30
 	min_antag_cap = list("denominator" = 18, "offset" = 1)
@@ -308,9 +294,9 @@
 	ruleset_flags = RULESET_HIGH_IMPACT
 	weight = list(
 		DYNAMIC_TIER_LOW = 0,
-		DYNAMIC_TIER_LOWMEDIUM = 0,
-		DYNAMIC_TIER_MEDIUMHIGH = 0,
-		DYNAMIC_TIER_HIGH = 0,
+		DYNAMIC_TIER_LOWMEDIUM = 1,
+		DYNAMIC_TIER_MEDIUMHIGH = 3,
+		DYNAMIC_TIER_HIGH = 3,
 	)
 	min_pop = 30
 	min_antag_cap = 1
@@ -383,9 +369,9 @@
 	pref_flag = ROLE_SPY
 	weight = list(
 		DYNAMIC_TIER_LOW = 0,
-		DYNAMIC_TIER_LOWMEDIUM = 0,
-		DYNAMIC_TIER_MEDIUMHIGH = 0,
-		DYNAMIC_TIER_HIGH = 0,
+		DYNAMIC_TIER_LOWMEDIUM = 1,
+		DYNAMIC_TIER_MEDIUMHIGH = 3,
+		DYNAMIC_TIER_HIGH = 3,
 	)
 	min_pop = 10
 	min_antag_cap = list("denominator" = 20, "offset" = 1)
@@ -445,5 +431,3 @@
 		create_separatist_nation(department_type, announcement = FALSE, dangerous = FALSE, message_admins = FALSE)
 
 	GLOB.round_default_lawset = /datum/ai_laws/united_nations
-
-
