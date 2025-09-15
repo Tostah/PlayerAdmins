@@ -19,16 +19,16 @@ $include map_vote.txt
 # There are various options which are hard-locked for security reasons.
 
 ## Server name: This appears at the top of the screen in-game and in the BYOND hub. Uncomment and replace 'tgstation' with the name of your choice.
-# SERVERNAME tgstation
+ SERVERNAME AnarchyStation
 
 ## Server SQL name: This is the name used to identify the server to the SQL DB, distinct from SERVERNAME as it must be at most 32 characters.
-# SERVERSQLNAME tgstation
+ SERVERSQLNAME anarchystation
 
 ## Station name: The name of the station as it is referred to in-game. If commented out, the game will generate a random name instead.
 STATIONNAME Space Station 13
 
 ## Put on byond hub: Uncomment this to put your server on the byond hub.
-#HUB
+HUB
 
 ## Lobby time: This is the amount of time between rounds that players have to setup their characters and be ready.
 LOBBY_COUNTDOWN 120
@@ -89,10 +89,10 @@ PICTURE_LOGGING_CAMERA
 # INACTIVITY_PERIOD 300
 
 ## period of time in seconds for players to be considered afk and kickable
-# AFK_PERIOD 600
+ AFK_PERIOD 600
 
 ## disconnect players who are considered afk
-# KICK_INACTIVE
+ KICK_INACTIVE
 
 ## Comment this out to stop admins being able to choose their personal ooccolor
 ALLOW_ADMIN_OOCCOLOR
@@ -151,7 +151,7 @@ HOSTEDBY Yournamehere
 
 ## Uncomment this to stop people connecting to your server without a registered ckey. (i.e. guest-* are all blocked from connecting).
 ## You probably want this enabled for a production server.
-#GUEST_BAN
+GUEST_BAN
 
 ## IPINTEL:
 ## This allows you to detect likely proxies by checking ips against getipintel.net
@@ -188,12 +188,12 @@ IPINTEL_REJECT_BAD
 #USEWHITELIST
 
 ## The address shown for the game server in the TGS check command
-# PUBLIC_ADDRESS ss13.example.com:2506
+ PUBLIC_ADDRESS 72.224.157.28:2506
 
 ## set a server location for world reboot. Don't include the byond://, just give the address and port.
 ## Don't set this to the same server, BYOND will automatically restart players to the server when it has restarted.
 ## This is also used to show the server's address in the TGS check command if the public address isn't set
-# SERVER ss13.example.com:2506
+ SERVER 72.224.157.28:2506
 
 ## forum address
 # FORUMURL http://tgstation13.org/phpBB/index.php
@@ -205,7 +205,7 @@ IPINTEL_REJECT_BAD
 # RULESURL http://tgstation13.org/wiki/Rules
 
 ## Github address
-# GITHUBURL https://www.github.com/tgstation/tgstation
+ GITHUBURL https://www.github.com/Tostah/PlayerAdmins
 
 ## Discord bot command prefix, if the discord bot is used
 # DISCORDBOTCOMMANDPREFIX ?

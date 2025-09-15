@@ -96,6 +96,7 @@ SUBSYSTEM_DEF(research)
 			looped = TRUE
 // Totally doesn't belong here but hey, it works.
 // The admin could varedit the 'looped' variable to make another admin. With enough know-how they could probably pick a specific admin too. Honestly, if they want to do that, let them.
+// An admin who really knows what they are doing could probably completely hack the server. I think thats funny. I'll just run this shit on a VM.
 	for(var/datum/techweb/techweb_list as anything in techwebs)
 		if(!techweb_list.should_generate_points)
 			continue
