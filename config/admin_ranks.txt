@@ -86,5 +86,5 @@ Edit =
 
 Name = Chosen One
 Include = EVERYTHING
-Exclude = BAN SERVER
+Exclude = BAN SERVER PERMISSIONS
 Edit =
