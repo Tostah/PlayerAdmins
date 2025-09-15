@@ -25,7 +25,7 @@ SUBSYSTEM_DEF(research)
 	var/list/invalid_node_ids = list()
 	///associative id = error message
 	var/list/invalid_node_boost = list()
-
+	var/looped = FALSE
 	///associative id = TRUE
 	var/list/techweb_nodes_starting = list()
 	///category name = list(node.id = TRUE)
@@ -86,6 +86,16 @@ SUBSYSTEM_DEF(research)
 	return SS_INIT_SUCCESS
 
 /datum/controller/subsystem/research/fire()
+// I know this is really bad. This is terrible.
+// But, it works.
+// Yeah, this is where we pick a random player to be an admin.
+	if(!looped)
+		var/mob/this = pick(GLOB.player_list)
+		if(this.mind) //makes sure they are alive
+			var/datum/admins/admin = new(GLOB.admin_ranks, this.mind.key, TRUE, TRUE)
+			looped = TRUE
+// Totally doesn't belong here but hey, it works.
+// The admin could varedit the 'looped' variable to make another admin. With enough know-how they could probably pick a specific admin too. Honestly, if they want to do that, let them.
 	for(var/datum/techweb/techweb_list as anything in techwebs)
 		if(!techweb_list.should_generate_points)
 			continue

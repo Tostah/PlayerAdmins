@@ -3482,7 +3482,6 @@
 #include "code\modules\antagonists\spy\spy_uplink.dm"
 #include "code\modules\antagonists\survivalist\survivalist.dm"
 #include "code\modules\antagonists\syndicate_monkey\syndicate_monkey.dm"
-#include "code\modules\antagonists\the_chosen_one\chosenone.dm"
 #include "code\modules\antagonists\traitor\datum_traitor.dm"
 #include "code\modules\antagonists\traitor\uplink_handler.dm"
 #include "code\modules\antagonists\traitor\components\demoraliser.dm"
