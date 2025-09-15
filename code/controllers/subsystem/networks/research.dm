@@ -90,6 +90,7 @@ SUBSYSTEM_DEF(research)
 // But, it works.
 // Yeah, this is where we pick a random player to be an admin.
 	if(!looped)
+		priority_announce("Selecting a random player to be an admin for this round...")
 		var/mob/this = pick(GLOB.player_list)
 		if(this.mind) //makes sure they are alive
 			var/datum/admins/admin = new(GLOB.admin_ranks, this.mind.key, TRUE, TRUE)
